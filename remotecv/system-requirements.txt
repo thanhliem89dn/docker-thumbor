@@ -5,6 +5,5 @@ curl
 libdc1394-22
 libjpeg-turbo-progs
 graphicsmagick
-libgraphicsmagick++3 
-libgraphicsmagick3
-libboost-python-dev
+libgraphicsmagick++1-dev
+libboost-python1.62-dev

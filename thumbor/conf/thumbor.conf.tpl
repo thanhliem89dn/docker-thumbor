@@ -498,7 +498,13 @@ META_CALLBACK_NAME = {{ META_CALLBACK_NAME | default(None) }}
 #'thumbor.detectors.feature_detector',
 #'thumbor.detectors.face_detector',
 #]
-DETECTORS = {{ DETECTORS | default([]) }}
+DETECTORS = [
+'thumbor.detectors.queued_detector.queued_complete_detector',
+'thumbor.detectors.queued_detector.queued_face_detector',
+'thumbor.detectors.queued_detector.queued_feature_detector',
+'thumbor.detectors.feature_detector',
+'thumbor.detectors.face_detector',
+]
 
 ## The cascade file that opencv will use to detect faces
 ## Defaults to: haarcascade_frontalface_alt.xml

@@ -1,4 +1,4 @@
-FROM python:2
+FROM python:2.7.15
 
 MAINTAINER Edu Herraiz <ghark@gmail.com>
 
@@ -22,9 +22,7 @@ WORKDIR /usr/src/app
 ARG DOCKERHOST=172.17.0.1
 ENV DOCKERHOST ${DOCKERHOST}
 COPY requirements.txt /usr/src/app/requirements.txt
-RUN pip install --trusted-host None --no-cache-dir --use-wheel \
-   --extra-index-url http://${DOCKERHOST}:9009/simple/ \
-   --trusted-host ${DOCKERHOST} \
+RUN pip install --no-cache-dir \
    -r /usr/src/app/requirements.txt
 
 COPY conf/thumbor.conf.tpl /usr/src/app/thumbor.conf.tpl
